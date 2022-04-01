@@ -99,7 +99,9 @@ const MetaCoinABI = [
     type: "function",
   },
 ];
-const METACOIN_ADDRESS = "0x2808196F26cC7d7072f285fe71db230720BD6201";
+
+// Add yoru contract address here.
+const METACOIN_ADDRESS = // Ex: "0x2808196F26cC7d7072f285fe71db230720BD6201";
 
 var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
 
@@ -114,6 +116,7 @@ var accounts = async function () {
   await web3.eth.getAccounts();
 };
 
+// Please change these 2 lines.
 var senderAddr = "0x237ee09CaBF1c46E2275e37d500fFC0b7fe2D228";
 var receiverAddr = "0xda7175932B62b77363fdE7773eb24943bcE77255";
 
