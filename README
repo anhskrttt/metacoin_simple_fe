@@ -34,7 +34,7 @@ This is an example of how to list things you need to use the software and how to
 
 0. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/anhskrttt/metacoin_simple_fe.git
    ```
 1. Launch Ganache. Add truffle-config.js if needed
 2. Compile & Deploy contract
