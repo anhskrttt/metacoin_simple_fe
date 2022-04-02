@@ -99,11 +99,34 @@ const MetaCoinABI = [
     type: "function",
   },
 ];
-
+var senderAddr;
 // Add yoru contract address here.
-const METACOIN_ADDRESS = // Ex: "0x2808196F26cC7d7072f285fe71db230720BD6201";
+const METACOIN_ADDRESS = "0x2808196F26cC7d7072f285fe71db230720BD6201";
 
-var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+document.addEventListener("DOMContentLoaded", function (event) {
+  if (window.ethereum) {
+    ethereum.request({ method: "eth_requestAccounts" });
+
+    ethereum.on("ChainChanged", () => window.location.reload());
+
+    ethereum.on("accountsChanged", (accounts) => {
+      if (accounts.length > 0) {
+        console.log(accounts[0]);
+        senderAddr = accounts[0];
+      }
+    });
+  } else {
+    console.error("Install Metamask.");
+  }
+});
+
+var web3;
+
+if (typeof web3 !== "undefined") {
+  web3 = new Web3(web3.currentProvider);
+} else {
+  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+}
 
 window.web3 = web3;
 
@@ -117,7 +140,7 @@ var accounts = async function () {
 };
 
 // Please change these 2 lines.
-var senderAddr = "0x237ee09CaBF1c46E2275e37d500fFC0b7fe2D228";
+// var senderAddr = "0x237ee09CaBF1c46E2275e37d500fFC0b7fe2D228";
 var receiverAddr = "0xda7175932B62b77363fdE7773eb24943bcE77255";
 
 function getBalance() {
