@@ -10,7 +10,6 @@ Add something here.
 
 - HTML/CSS/JS
 - Truffle
-- 
 
 <!-- GETTING STARTED -->
 
@@ -20,15 +19,14 @@ Add something here.
 
 ### Prerequisites
 
-- Nodejs
+- [Nodejs](https://nodejs.org/en/)
 - Truffle
-- Ganache
-- Metamask
-
-- npm
-  ```sh
-  npm install npm@latest -g
+```sh
+  npm install -g truffle
   ```
+- [Ganache](https://trufflesuite.com/ganache/index.html)
+
+- [Metamask](https://metamask.io/)
 
 ### Installation
 
